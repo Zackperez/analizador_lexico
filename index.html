@@ -4,11 +4,84 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
     <title>Compilador</title>
 </head>
 <body>
 
-    <textarea name="textarea" id = "entrada_texto"rows="10" cols="50">ABC +-/*</textarea>
+<div class = "Pagina">
+
+    <header>
+        <div class="menu">
+            <nav class="menu-navegacion">
+                <ul class="menu-navegacion__contenido">
+                    <li class="menu-navegacion__item"><a href="">Inicio</a></li>
+                    <li class="menu-navegacion__item"><a href="documentacion.html">Documentación</a></li>
+                    <li class="menu-navegacion__item"><a href="">Servicios</a></li>
+                    <li class="menu-navegacion__item"><a href="">Acerca de mi</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class = "presentacion">
+        <div class="presentacion__contenedor">
+
+            <div class="presentacion__contenedor-imagen"> 
+                <img src="imagenes/compilador.png" class="imagenCompilador" alt="">
+            </div>
+
+            <div class="presentacion__contenedor--texto">
+                <h1>Compilador</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam autem, ut repellendus doloremque provident labore soluta quas explicabo id qui aliquam blanditiis, sapiente amet voluptates deleniti. Incidunt tempora officiis beatae sequi sint nostrum deserunt sit esse quis modi reiciendis vitae maiores illum dicta recusandae ab corrupti impedit nisi, dolore ullam natus qui molestiae id! Voluptates tempora et praesentium distinctio dolores nihil! Ut dolor facere porro itaque provident reprehenderit beatae necessitatibus hic dolorum accusamus eveniet, alias inventore velit pariatur voluptatum expedita? Nemo aperiam obcaecati dolor veniam quia ipsam quisquam voluptates consequatur expedita, officiis, accusamus minima similique eius quam commodi, ex provident?</p>
+
+            </div>
+            
+        </div>
+    </section>
+
+    <section class = "explicacion">
+        <h1>Página de explicación</h1>
+    </section>
+
+    <section class = "analizador">
+        <div class="analizador__contenido">
+            <div class="analizador__contenido-titulo_analizador">
+                <h1>Analizador</h1>
+            </div>
+            <div class="analizador__contenido-titulo_token">
+                <h1>Token</h1>
+            </div>
+            <div class="analizador__contenido-entrada_texto">
+                <textarea id="story" name="story" rows="1" cols="33"> </textarea>
+            </div>
+            <div class="analizador__contenido-resultado_token">
+
+                <table class="resultado_token">
+                    <tr>
+                        <td>Operadores</td>
+                        <td>2</td>
+                        <td>Letras</td>
+                        <td></td>
+                        <td>Palabras reservadas</td>
+                        <td></td>
+                        <td>Delimitadores</td>
+                        <td></td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="analizador__contenido-tabla_resultados">
+                <table class="tabla_resultados">
+                    <tr>
+                    <td>Celda 1</td>
+                    <td>Celda 2</td>
+                    <td>Celda 3</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>
 
 <script src="index.js"></script>
 </body>

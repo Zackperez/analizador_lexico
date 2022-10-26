@@ -3,12 +3,15 @@ var cursor = 0;
 
 const texto_area = document.getElementById('entrada_texto').value
 
-const OPERATORS = ["+", "-", "*", "/", "%"]
-const LETRAS = ["A","B","C","D","E","F","G"]
-const ESPACIO = [" "]
-const isOperator = character => OPERATORS.includes(character)
-const isLetter = character => LETRAS.includes(character)
-const isEmpty = character => ESPACIO.includes(character)
+const OPERATORS = ["+", "-", "*", "/", "%", "="];
+const LETRAS = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+const ESPACIO = [" "];
+const PALABRAS_RESERVADAS = ["TEXTO","ENTERO","REAL","CAPTURA.TEXTO()"];
+const DELIMITADORES = [";", "(", ")", '""', "''"];
+const isOperator = character => OPERATORS.includes(character);
+const isLetter = character => LETRAS.includes(character);
+const isEmpty = character => ESPACIO.includes(character);
+
 
 
 
