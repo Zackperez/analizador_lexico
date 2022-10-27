@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap');
+
+body{
+    padding:0;
+    margin:0;
+    background-color: #263238;
+    overflow: hidden;
+}
+
+.menu{
+    height: 100%;
+    width: 75px;
+    position: absolute;
+    z-index: 1 !important;
+    background-color: #192227;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu ul{
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+    text-align: center;
+}
+
+.menu ul a{
+    padding-bottom: 15px;
+}
+
+textarea{
+    margin-top: 10px;
+    margin-left:100px;
+    width: 90%;
+    height: 100%;
+    border: none;
+    cursor: default;
+    background-color: #263238;
+    font-size: 30px;
+    color: white;
+    font-family: monospace;
+    resize: none;
+}
+
+textarea:focus{
+    outline: none;
+}
+
+.tabla{
+    margin-left: 100px;
+    border: 2px solid white;
+    font-size: 30px;
+}
