@@ -9,12 +9,17 @@ body{
 
 .menu{
     height: 100%;
-    width: 75px;
+    width: auto;
     position: absolute;
     z-index: 1 !important;
     background-color: #192227;
     display: flex;
     flex-direction: column;
+}
+
+
+i{
+    cursor:pointer;
 }
 
 .menu ul{
@@ -50,4 +55,15 @@ textarea:focus{
     margin-left: 100px;
     border: 2px solid white;
     font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    width:auto;
+}
+
+th{
+    letter-spacing: 1.5px;
+    padding: 0px 15px 0px 15px;
+}
+
+td{
+    text-align: center;
 }
