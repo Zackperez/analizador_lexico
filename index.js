@@ -1,58 +1,102 @@
+document.addEventListener('DOMContentLoaded', function(){
 
-var cursor = 0;
+    const btn_analizar = document.getElementById('btn_analizar');
+    const btn_limpiar = document.getElementById('btn_limpiar');
 
-const btn_analizar = document.getElementById('btn_analizar');
-const btn_limpiar = document.getElementById('btn_limpiar');
+    const OPERATORS = ["+", "-", "*", "/", "%", "="];
+    const NUMBER = /^[0-9]+$/
+    const LETRAS = /[a-zA-Z]/
+    const ESPACIO = [" "];
+    const PALABRAS_RESERVADAS = ["TEXTO","ENTERO","REAL","CAPTURA.TEXTO()"];
+    const DELIMITADORES = [";", "(", ")", '"', "'",":"];
+
+    const isOperator = character => OPERATORS.includes(character);
+    const isNumber = character => NUMBER.test(character);
+    const isLetter = character => LETRAS.test(character);
+    const isEmpty = character => ESPACIO.includes(character);
+    const isWordReserved = character => PALABRAS_RESERVADAS.includes(character);
+    const isDelimiter = character => DELIMITADORES.includes(character);
+
+    btn_analizar.onclick = analizar;
+    btn_limpiar.onclick = limpiar_campos;
+
+    function analizar(){
+        const lineas_texto_area = document.getElementById('entrada_texto').value.split('\n');
+        const texto_area = document.getElementById('entrada_texto').value;
+        const texto_area2 = document.getElementById('entrada_texto').value.split(/\s/);
 
 
+        for(var i = 0; i < lineas_texto_area.length; i++){
+            var cursor = 0;
+            console.log("Linea",i+1,lineas_texto_area[i]);
+            var array = [];
+            //console.log("T2",texto_area2);
+            console.log(texto_area);
+            while (cursor < texto_area.length){
+                const caracter = texto_area[cursor];
+            
+                if (isOperator(caracter)){
+                    console.log("es un operador",caracter);
+                }
 
-const OPERATORS = ["+", "-", "*", "/", "%", "="];
-const LETRAS = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-const ESPACIO = [" "];
-const PALABRAS_RESERVADAS = ["TEXTO","ENTERO","REAL","CAPTURA.TEXTO()"];
-const DELIMITADORES = [";", "(", ")", '"', "'",":"];
-const isOperator = character => OPERATORS.includes(character);
-const isLetter = character => LETRAS.includes(character);
-const isEmpty = character => ESPACIO.includes(character);
-const isWordReserved = character => PALABRAS_RESERVADAS.includes(character);
-const isDelimiter = character => DELIMITADORES.includes(character);
+                if (isLetter(caracter)){
+                    let symbol = caracter;
+                    while (isLetter(texto_area[++cursor])) {
+                        symbol += texto_area[cursor];
+                    }
 
+                    console.log(symbol);
+                    array.push(symbol);
+                    console.log(array);
+                }
 
-btn_analizar.onclick = function(){
-    const texto_area = document.getElementById('entrada_texto').value;
+                if (isNumber(caracter)){
+                    let number = caracter;
+                    while (isNumber(texto_area[++cursor])) {
+                        number += texto_area[cursor];
+                      }
+                      console.log("Es un numero",number);
 
-    while (cursor < texto_area.length){
-        const caracter = texto_area[cursor];
-    
-        if (isOperator(caracter)){
-            console.log(caracter+" es un operador");
-        };
-    
-        if (isLetter(caracter)){
-            console.log(caracter+" es una letra");
-        };
-    
-        if (isEmpty(caracter)){
-            console.log(caracter+" hay espacio");
-        };
+                }
 
-        if (isWordReserved(caracter)){
-            console.log(caracter+" es una palabra reservada");
-        };
+                if (isEmpty(caracter)){
+                    console.log("es un espacio",caracter);
+                }
 
-        if (isDelimiter(caracter)){
-            console.log(caracter+" es un delimitador")
-        };
-    
-        cursor++;
+                if (isDelimiter(caracter)){
+                    console.log("es un delimitador",caracter);
+                }
+
+                if(caracter == "\n"){
+                    console.log("Es un salto de línea "+caracter);
+                }
+                cursor++; //Recorre cada caracter
+
+            }
+            console.log(texto_area.length);
+
+            cursor = 0; // Se reinicia el valor del cursor a 0 para poder terminar de leer los caracteres de la línea
+        }
+
+        analizador_sintactico(lineas_texto_area, texto_area);
+
     }
 
-    cursor = 0;
 
-}
 
-btn_limpiar.addEventListener("click", function(){
-    const texto_area = document.getElementById('entrada_texto').value = "";
+    function limpiar_campos(){
+        const texto_area = document.getElementById('entrada_texto').value = "";
+        console.log("area de texto limpiada")
+    }
 
-})
+    function analizador_sintactico(lineas_texto_area,texto_area){
+        
+        let expReg_CrearVariable = /[a-zA-Z]+([0-9]+)?\s[a-zA-Z]+[;]/g;
+        let expReg_AsignarValorVariable = /[a-zA-Z]+([0-9]+)?\s[=]\s["][a-zA-Z0-9\s,.-/]+["][;]/;
+        for(var i = 0; i < lineas_texto_area.length; i++){
+            res = expReg_CrearVariable.test(texto_area);
+            console.log(res);
+        }
+    }
 
+});
