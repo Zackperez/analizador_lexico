@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/estilos2.css">
     <title>Document</title>
 </head>
-<body>
+<body> <!-- 
   <div class="pagina">
     <nav class="menu">
       <ul class="menu-navegacion__contenido">
@@ -17,31 +17,45 @@
         <a><i class="fa-solid fa-play fa-3x" style="color: #697679";></i></a>
     </ul>
     </nav>
-  </div>
+  </div>-->
 
-  <div>
-    <textarea id = "entrada_texto" rows="10" cols="90"></textarea>
-  </div>
-
-  <div class="tabla">
-    <table class="tabla_resultados">
-      <tr>
-          <th>Celda 1</th>
-          <th>Celda 3</th>
-          <th>Celda 2</th>
-      </tr>
-      <tr>
-          <td>hola</td>
-          <td>aksjdas</td>
-          <td>kasdas</td>
-      </tr>
-      <tr>
-          <td>hola</td>
-          <td>aksjdas</td>
-          <td>kasdas</td>
-      </tr>
-
-  </table>
+  <div class="container_formulario">
+    <div class="container_form">
+        <h1 class="h4">Analizador Sintactico Lexico de JavaScript</h1>
+        <form id="container_codigo">
+          <textarea
+            class="text-body-1"
+            name="entrada"
+            placeholder="Prueba algo como const variable = 1;"
+            id="codigo"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <div class="group-buttons">
+            <button type="submit" id="btn-compilar">Compilar</button>
+            <button type="reset">Limpiar</button>
+          </div>
+        </form>
+    </div>
+    <div class="container_lexico">
+      <h4>Analizador Lexico</h4>
+      <div id="aLexico">
+        <table>
+          <thead>
+            <tr>
+              <th class="h6">nombre</th>
+              <th class="h6">tipo</th>
+              <th class="h6">codigo</th>
+            </tr>
+          </thead>
+          <tbody id="datos"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="container_sintactico">
+      <h4>Analizador Sintactico</h4>
+      <div id="aSintactico"></div>
+    </div>
   </div>
 
   <script src="https://kit.fontawesome.com/1a5bcd4a97.js" crossorigin="anonymous"></script>
