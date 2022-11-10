@@ -1,22 +1,32 @@
 [
     {
-        "nombre": "REAL",
-        "tipo": "Palabra reservada",
+        "nombre": "Real",
+        "tipo": "palabra reservada",
         "codigo":"100"
     },
     {
-        "nombre": "TEXTO",
-        "tipo": "Palabra reservada",
+        "nombre": "Texto",
+        "tipo": "palabra reservada",
         "codigo":"100"
     },
     {
-        "nombre": "ENTERO",
-        "tipo": "Palabra reservada",
+        "nombre": "Entero",
+        "tipo": "palabra reservada",
         "codigo":"100"
     },
     {
         "nombre": "CAPTURA.TEXTO()",
-        "tipo": "Palabra reservada",
+        "tipo": "palabra reservada",
+        "codigo":"100"
+    },
+    {
+        "nombre": "Mensaje.Texto()",
+        "tipo": "palabra reservada",
+        "codigo":"100"
+    },
+    {
+        "nombre": "CAPTURA.TEXTO()",
+        "tipo": "palabra reservada",
         "codigo":"100"
     },
     {

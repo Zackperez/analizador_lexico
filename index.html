@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,104 +9,113 @@
     <!-- CSS only -->
     <title>Compilador</title>
 </head>
+
 <body>
 
-<div class = "Pagina">
+    <div class="Pagina">
 
-    <header>
-        <div class="menu">
-            <nav class="menu-navegacion">
-                <ul class="menu-navegacion__contenido">
-                    <li class="menu-navegacion__item"><a href="">Inicio</a></li>
-                    <li class="menu-navegacion__item"><a href="documentacion.html">Documentación</a></li>
-                    <li class="menu-navegacion__item"><a href="">Servicios</a></li>
-                    <li class="menu-navegacion__item"><a href="">Acerca de mi</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section class = "presentacion">
-        <div class="presentacion__contenedor">
-
-            <div class="presentacion__contenedor-imagen"> 
-                <img src="imagenes/compilador.png" class="imagenCompilador" alt="">
+        <header>
+            <div class="menu">
+                <nav class="menu-navegacion">
+                    <ul class="menu-navegacion__contenido">
+                        <li class="menu-navegacion__item"><a href="">Inicio</a></li>
+                        <li class="menu-navegacion__item"><a href="documentacion.html">Documentación</a></li>
+                        <li class="menu-navegacion__item"><a href="">Servicios</a></li>
+                        <li class="menu-navegacion__item"><a href="">Acerca de mi</a></li>
+                    </ul>
+                </nav>
             </div>
+        </header>
+        <section class="presentacion">
+            <div class="presentacion__contenedor">
 
-            <div class="presentacion__contenedor--texto">
-                <h1>Compilador</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam autem, ut repellendus doloremque provident labore soluta quas explicabo id qui aliquam blanditiis, sapiente amet voluptates deleniti. Incidunt tempora officiis beatae sequi sint nostrum deserunt sit esse quis modi reiciendis vitae maiores illum dicta recusandae ab corrupti impedit nisi, dolore ullam natus qui molestiae id! Voluptates tempora et praesentium distinctio dolores nihil! Ut dolor facere porro itaque provident reprehenderit beatae necessitatibus hic dolorum accusamus eveniet, alias inventore velit pariatur voluptatum expedita? Nemo aperiam obcaecati dolor veniam quia ipsam quisquam voluptates consequatur expedita, officiis, accusamus minima similique eius quam commodi, ex provident?</p>
+                <div class="presentacion__contenedor-imagen">
+                    <img src="imagenes/compilador.png" class="imagenCompilador" alt="">
+                </div>
 
-            </div>
-            
-        </div>
-    </section>
+                <div class="presentacion__contenedor--texto">
+                    <h1 class="presentacion__titulo">Compilador</h1>
+                    <p class="presentacion__descripcion">Un compilador es un programa que traduce código fuente escrito en un lenguaje de alto nivel como Java, a un lenguaje legible por la máquina llamado código objeto, lenguaje de destino o incluso lenguaje ensamblador. Por lo tanto, un compilador podría llamarse traductor, pero sus tareas son más amplias porque, como parte de la compilación del programa, también informa de errores al leer el código.</p>
 
-    <section class = "explicacion">
-        <h1>Página de explicación</h1>
-    </section>
-
-    <section class = "analizador">
-        <div class="analizador__contenido">
-            <div class="analizador__contenido-titulo_analizador">
-                <h1>Analizador</h1>
-            </div>
-            <div class="analizador__contenido-titulo_token">
-                <h1>Token</h1>
-            </div>
-            <div class="analizador__contenido-entrada_texto">
-                <textarea id="story" name="story" rows="1" cols="33"> </textarea>
-            </div>
-            <div class="analizador__contenido-resultado_token">
-                <div class="contenedor_denose">
-                    <table class="tabla_resultados">
-                        <tr>
-                            <th>Operadores</th>
-                            <th>5</th>
-                        </tr>
-                        <tr>
-                            <th>Letras</th>
-                            <th>19</th>
-                        </tr>
-                        <tr>
-                            <th>Palabras reservadas</th>
-                            <th>5</th>
-                        </tr>
-                        <tr>
-                            <th>Delimitadores</th>
-                            <th>2</th>
-                        </tr>
-
-                    </table>
                 </div>
 
             </div>
-            <div class="analizador__contenido-tabla_resultados">
-                <div class = "tabla">
+        </section>
+
+        <section class="explicacion">
+            <h1>Página de explicación</h1>
+            <div class="explicacion__fases_compilador">
+                <div class="analizador_lexico">
+                    <h1>Analizador Léxico</h1>
+                    <p>El analizador léxico o lexicográfico (Scanner en inglés) es la primera etapa del proceso de compilación, el cual se encarga de dividir el programa en Tokens, los cuales, según una tabla de símbolos definida por el mismo lenguaje.
+                    De esta forma cada token del programa es clasificado según su significado para ser procesados en la segunda etapa del proceso de compilación.</p>
+                </div>
+                <div class="analizador_sintactico">
+                    <h1>Analizador Sintáctico</h1>
+                    <p>El analizador sintáctico (Parse en inglés), es la segunda fase del proceso de compilación y tiene como finalidad la generación de un Árbol sintáctico, el cual no es más que una estructura de datos compleja que permite representar de una forma más simple al programa fuente.
+                    Los compiladores modernos utilizan estructuras de objetos para representa a un programa, de esta forma existe una clase específica para representa cada posible token de nuestra tabla de símbolos.</p>
+                </div>
+                <div class="analizador_semantico">
+                    <h1>Analizador Semántico</h1>
+                    <p>El analizador semántico es el último paso antes de empezar a compilar realmente el código, prepara el programa para ser compilado. El analizador semántico parte del árbol sintáctico abstracto y tiene la finalidad de validar los puntos más finos del programa, como por ejemplo, validar compatibilidad en tipos de datos, que la variable utilizada en una instrucción este previamente declara o que estén dentro del contexto, si implementamos una interface que todos los métodos estén definidos, etc.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="analizador">
+            <div class="analizador__contenido">
+
+                <!-- Titulos fila 1-->
+                <div class="analizador__contenido_analizador_titulo">
+                    <h1>Analizador</h1>
+                </div>
+                <div class="analizador__contenido_analizador_lexico_titulo">
+                    <h1>Resultado Léxico</h1>
+                </div>
+                <div class="analizador__contenido_analizador_sintactico_titulo">
+                    <h1>Resultado Sinta</h1>
+                </div>
+
+
+
+                <!-- entradas/resultados fila 2-->
+                <div class="analizador__contenido_analizador_entrada">
+                    <form id="container_codigo">
+                        <textarea id="codigo" rows="1" cols="33"></textarea>
+                        <div class="analizador__contenido_botones">
+                            <button type="submit" id="btn-compilar">Compilar</button>
+                            <button type="reset">Limpiar</button>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="analizador__contenido-resultado_analizador_Lexico">
                     <table class="tabla_resultados">
-                        <tr>
-                            <th>Celda 1</th>
-                            <th>Celda 3</th>
-                            <th>Celda 2</th>
-                        </tr>
-                        <tr>
-                            <td>hola</td>
-                            <td>aksjdas</td>
-                            <td>kasdas</td>
-                        </tr>
-                        <tr>
-                            <td>hola</td>
-                            <td>aksjdas</td>
-                            <td>kasdas</td>
-                        </tr>
-    
+                        <tbody id="datos"></tbody>
                     </table>
+
+                </div>
+
+                <div class="analizador__contenido-resultado_analizador_sintactico">
+                    <div class="container_sintactico">
+                        <div id="aSintactico"></div>
+                    </div>
                 </div>
 
             </div>
-        </div>
-    </section>
-</div>
+        </section>
 
-<script src="index.js"></script>
+        <section>
+            <footer>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit quisquam dolorum voluptatem in
+                    qui, amet aliquam, consequuntur odit ad necessitatibus, cupiditate ut laboriosam accusamus possimus
+                    quod quam atque praesentium aperiam.</p>
+            </footer>
+        </section>
+    </div>
+
+    <script src="index.js"></script>
 </body>
+
 </html>
