@@ -9,7 +9,7 @@ let tokens = [];
 /* obteniendo la informacion de la bd y pasandola a una variable local */
 const obtenerLexemas = async () => {
   try {
-    const rs = await fetch("./lexemas.json");
+    const rs = await fetch("lexemas.json");
     const data = await rs.json();
     lexemas = data;
   } catch (error) {
@@ -32,8 +32,7 @@ function buscar(listaDePalabras) {
     /* combrobar si la palabra noencontrada no es un string vacio*/
     : comprobarPalabraNoEncontrada(palabra) !== undefined ?
       subTokens.push(comprobarPalabraNoEncontrada(palabra)):
-      console.log('es un string vacio')
-      ;
+      console.log('es un string vacio');
   });
   tokens.push(subTokens);
   console.log(tokens);
@@ -96,17 +95,15 @@ function comprobarCaso(bloques){
   let respuesta;
   let i=0;
   bloques.forEach(item=>{
-    item.startsWith('crear')?
-        item.match(/[a-zA-Z]+([0-9]+)?\s[a-zA-Z]+[;]/)?
-            respuesta =[i+1,'Inicialización de variable']:
-            respuesta =[i+1,`El bloque de codigo ${bloques.indexOf(item)+1} es incorrecta`]
 
-    :item.startsWith('asignar')?
-        item.match(/[a-zA-Z]+\s[=]\s(["]([a-zA-Z]+)["])[;]/)?
-        respuesta =[i+1,'Asignación de variable']:
-        respuesta =[i+1,`El bloque de codigo ${bloques.indexOf(item)+1} es incorrecta`]   
-        
-    :respuesta =[i+1,'no reconosco esta sintaxis']
+    if (item.match(/[a-zA-Z]+([0-9]+)?\sTEXTO;|ENTERO;|REAL;/)){
+      respuesta =[i+1,'Inicialización de variable']
+    }
+
+    if(item.match(/[a-zA-Z]+([0-9]+)?\s[=]\s["][a-zA-Z0-9\s,.-/]+["][;]/)){
+      respuesta =[i+1,'Asignación de variable']
+    }
+
     respuestas.push(respuesta);
     console.log(respuestas);
     i++;
