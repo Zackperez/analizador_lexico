@@ -23,7 +23,7 @@ body {
         "analizador"
         "footer";
     grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 80vh 100vh 100vh 30vh;
+    grid-template-rows: 0.2fr 80vh 100vh 70vh 30vh;
     text-align: center;
 }
 
@@ -209,18 +209,20 @@ footer {
     grid-area: resultado_lexico;
     background-color: #ffffff;
     color: #252830;
+    height: 50vh;
 }
 
 .analizador__contenido-resultado_analizador_sintactico {
     grid-area: resultado_sintactico;
     background-color: #ffffff;
     color: #252830;
+    height: 50vh;
+
 }
 
 .analizador-titulo{
     color: white;
 }
-
 
 
 .boton_compilador {
@@ -257,7 +259,6 @@ textarea:focus {
 
 .text-body-1 {
     font-size: 2.8vh;
-
 }
 
 .linea {

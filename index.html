@@ -106,27 +106,35 @@
 
                 <!-- entradas/resultados fila 2-->
                 <div class="analizador__contenido_analizador_entrada">
-                    <form id="container_codigo">
-                        <textarea id="codigo" rows="1" cols="33"></textarea>
-                        <div class="analizador__contenido_botones">
-                            <button type="submit" class="boton_compilador" id="btn-compilar">Compilar</button>
-                            <button type="reset" class="boton_compilador">Limpiar</button>
-                        </div>
-                    </form>
+                    <div class="analizador__contenido_container">
+                        <form id="container_codigo">
+                            <textarea id="codigo" rows="1" cols="33"></textarea>
+                            <div class="analizador__contenido_botones">
+                                <button type="submit" class="boton_compilador" id="btn-compilar">Compilar</button>
+                                <button type="reset" class="boton_compilador">Limpiar</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
 
 
                 <div class="analizador__contenido-resultado_analizador_Lexico">
-                    <table class="tabla_resultados">
-                        <tbody id="datos"></tbody>
-                    </table>
+                    <div class="analizador__contenido_container">
+                        <table class="tabla_resultados">
+                            <tbody id="datos" class="tabla_datos"></tbody>
+                        </table>
+                    </div>
+
 
                 </div>
 
                 <div class="analizador__contenido-resultado_analizador_sintactico">
-                    <div class="container_sintactico">
-                        <div id="aSintactico"></div>
+                    <div class="analizador__contenido_container">
+                        <div class="container_sintactico">
+                            <div id="aSintactico"></div>
+                        </div>
                     </div>
+
                 </div>
 
             </div>
