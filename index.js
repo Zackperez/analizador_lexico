@@ -103,7 +103,7 @@ function comprobarCaso(bloques) {
   let i = 0;
   bloques.forEach(item => {
 
-    if (item.match(/^[a-zA-Z]+([0-9]+)?\sTexto;|Entero;|Real;$/)) {
+    if (item.match(/^[a-zA-Z_]+([0-9]+)?\s(Texto|Entero|Real)[;]$/)) {
       respuesta = [i + 1, 'Inicialización de variable'];
 
     } else if (item.match(/^[a-zA-Z_]+([0-9]+)?\s[=]\s((["][a-zA-Z0-9\s,.-/]+["])?|[a-zA-Z0-9/])[;]$/)) {
