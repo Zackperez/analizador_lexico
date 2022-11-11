@@ -35,7 +35,11 @@
 
                 <div class="presentacion__contenedor--texto">
                     <h1 class="presentacion__titulo">Compilador</h1>
-                    <p class="presentacion__descripcion">Un compilador es un programa que traduce código fuente escrito en un lenguaje de alto nivel como Java, a un lenguaje legible por la máquina llamado código objeto, lenguaje de destino o incluso lenguaje ensamblador. Por lo tanto, un compilador podría llamarse traductor, pero sus tareas son más amplias porque, como parte de la compilación del programa, también informa de errores al leer el código.</p>
+                    <p class="presentacion__descripcion">Un compilador es un programa que traduce código fuente escrito
+                        en un lenguaje de alto nivel como Java, a un lenguaje legible por la máquina llamado código
+                        objeto, lenguaje de destino o incluso lenguaje ensamblador. Por lo tanto, un compilador podría
+                        llamarse traductor, pero sus tareas son más amplias porque, como parte de la compilación del
+                        programa, también informa de errores al leer el código.</p>
 
                 </div>
 
@@ -43,21 +47,43 @@
         </section>
 
         <section class="explicacion">
-            <h1>Página de explicación</h1>
             <div class="explicacion__fases_compilador">
-                <div class="analizador_lexico">
-                    <h1>Analizador Léxico</h1>
-                    <p>El analizador léxico o lexicográfico (Scanner en inglés) es la primera etapa del proceso de compilación, el cual se encarga de dividir el programa en Tokens, los cuales, según una tabla de símbolos definida por el mismo lenguaje.
-                    De esta forma cada token del programa es clasificado según su significado para ser procesados en la segunda etapa del proceso de compilación.</p>
+                <div class="explicacion__titulo">
+                    <h1 class="explicacion__titulo-h1">Fases de un compilador</h1>
                 </div>
-                <div class="analizador_sintactico">
-                    <h1>Analizador Sintáctico</h1>
-                    <p>El analizador sintáctico (Parse en inglés), es la segunda fase del proceso de compilación y tiene como finalidad la generación de un Árbol sintáctico, el cual no es más que una estructura de datos compleja que permite representar de una forma más simple al programa fuente.
-                    Los compiladores modernos utilizan estructuras de objetos para representa a un programa, de esta forma existe una clase específica para representa cada posible token de nuestra tabla de símbolos.</p>
+                <div class="explicacion__analizador_lexico">
+                    <div class="explicacion__container">
+                        <h1 class="explicacion__numero">1</h1>
+                        <h1 class="explicacion__analizador_titulo">Analizador Léxico</h1>
+                        <p class="explicacion__analizador_descripcion">Es la primera etapa del proceso de
+                            compilación, el cual se encarga de dividir el programa en Tokens, los cuales, según una
+                            tabla de
+                            símbolos definida por el mismo lenguaje.</p>
+                    </div>
+
                 </div>
-                <div class="analizador_semantico">
-                    <h1>Analizador Semántico</h1>
-                    <p>El analizador semántico es el último paso antes de empezar a compilar realmente el código, prepara el programa para ser compilado. El analizador semántico parte del árbol sintáctico abstracto y tiene la finalidad de validar los puntos más finos del programa, como por ejemplo, validar compatibilidad en tipos de datos, que la variable utilizada en una instrucción este previamente declara o que estén dentro del contexto, si implementamos una interface que todos los métodos estén definidos, etc.</p>
+                <div class="explicacion__analizador_sintactico">
+                    <div class="explicacion__container">
+                        <h1 class="explicacion__numero">2</h1>
+
+                        <h1 class="explicacion__analizador_titulo">Analizador Sintáctico</h1>
+                        <p class="explicacion__analizador_descripcion">Es la segunda fase del proceso de compilación y
+                            tiene
+                            como finalidad la generación de un Árbol sintáctico, el cual no es más que una estructura de
+                            datos compleja que permite representar de una forma más simple al programa fuente.</p>
+                    </div>
+
+                </div>
+                <div class="explicacion__analizador_semantico">
+                    <div class="explicacion__container">
+                        <h1 class="explicacion__numero">3</h1>
+                        <h1 class="explicacion__analizador_titulo">Analizador Semántico</h1>
+                        <p class="explicacion__analizador_descripcion">Es el último paso antes de empezar a compilar
+                            realmente el código,
+                            prepara el programa para ser compilado. El analizador semántico parte del árbol sintáctico
+                            abstracto y tiene la finalidad de validar los puntos más finos del programa.</p>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -67,13 +93,13 @@
 
                 <!-- Titulos fila 1-->
                 <div class="analizador__contenido_analizador_titulo">
-                    <h1>Analizador</h1>
+                    <h1 class="analizador-titulo">Analizador</h1>
                 </div>
                 <div class="analizador__contenido_analizador_lexico_titulo">
-                    <h1>Resultado Léxico</h1>
+                    <h1 class="analizador-titulo">Resultado Léxico</h1>
                 </div>
                 <div class="analizador__contenido_analizador_sintactico_titulo">
-                    <h1>Resultado Sinta</h1>
+                    <h1 class="analizador-titulo">Resultado Sintántico</h1>
                 </div>
 
 
@@ -83,8 +109,8 @@
                     <form id="container_codigo">
                         <textarea id="codigo" rows="1" cols="33"></textarea>
                         <div class="analizador__contenido_botones">
-                            <button type="submit" id="btn-compilar">Compilar</button>
-                            <button type="reset">Limpiar</button>
+                            <button type="submit" class="boton_compilador" id="btn-compilar">Compilar</button>
+                            <button type="reset" class="boton_compilador">Limpiar</button>
                         </div>
                     </form>
                 </div>
@@ -106,13 +132,11 @@
             </div>
         </section>
 
-        <section>
-            <footer>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit quisquam dolorum voluptatem in
-                    qui, amet aliquam, consequuntur odit ad necessitatibus, cupiditate ut laboriosam accusamus possimus
-                    quod quam atque praesentium aperiam.</p>
-            </footer>
-        </section>
+        <footer>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit quisquam dolorum voluptatem in
+                qui, amet aliquam, consequuntur odit ad necessitatibus, cupiditate ut laboriosam accusamus possimus
+                quod quam atque praesentium aperiam.</p>
+        </footer>
     </div>
 
     <script src="index.js"></script>

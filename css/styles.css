@@ -6,24 +6,24 @@
     --fuenteTitulos: 'Heebo', sans-serif;
 }
 
+
 body {
     font-family: var(--fuenteParrafos);
     color: var(--menuBG);
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
 }
-
-
 
 .Pagina {
     display: grid;
     grid-template-areas:
-    "menu"
-    "presentacion"
-    "explicacion"
-    "analizador";
+        "menu"
+        "presentacion"
+        "explicacion"
+        "analizador"
+        "footer";
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 0.2fr 80vh 100vh 100vh 30vh;
     text-align: center;
 }
 
@@ -34,31 +34,34 @@ body {
 }
 
 .presentacion {
-    /*background-color: aliceblue;*/
     display: grid;
     grid-area: presentacion;
-    padding: 0px 100px 0px 100px;
+    padding: 0px 50px 0px 50px;
 }
 
-.explicacion{
-    /*background-color:aquamarine;*/
+.explicacion {
     display: grid;
-    grid-area:explicacion;
+    grid-area: explicacion;
 }
 
-.analizador{
-    /*background-color: bisque;*/
+.analizador {
     display: grid;
     grid-area: analizador;
     background-color: var(--menuBG);
     padding: 0px 100px 50px 100px;
 }
 
+footer {
+    grid-area: footer;
+}
+
+/* Menu de navegación*/
+
 .menu-navegacion__contenido {
     display: flex;
     justify-content: center;
     list-style: none;
-    height: 80px;
+    height: 5vh;
     align-items: center;
     text-align: center;
 }
@@ -71,7 +74,7 @@ body {
 .menu-navegacion__item a {
     text-decoration: none;
     color: white;
-    font-size: 1.1em;
+    font-size: 3vh;
     font-weight: 500;
     letter-spacing: 2px;
     padding: 0px 10px 5px 10px;
@@ -81,88 +84,159 @@ body {
     border-bottom: 2px solid #000;
 }
 
-.presentacion__contenedor{
+/* Página de presentacion*/
+
+
+.presentacion__contenedor {
     display: grid;
     grid-template-columns: 0.5fr 1fr;
     grid-template-rows: 1fr;
+    align-items: center;
 }
 
-.presentacion__titulo{
-    font-size: 6vh;
+.presentacion__titulo {
+    font-size: 10vh;
 }
 
-.presentacion__descripcion{
-    font-size: 2vh;
-}
-
-.imagenCompilador{
-    height: 400px;
-}
-
-.explicacion__fases_compilador{
-    display: grid;
-    grid-template-areas: 
-    "fase1 fase2 fase3";
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
+.presentacion__descripcion {
+    font-size: 2.8vh;
     text-align: center;
 }
 
-.analizador_lexico{
+.imagenCompilador {
+    height: 400px;
+}
+
+/* Página del analizador */
+
+.explicacion__fases_compilador {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo titulo"
+        "fase1 fase2 fase3";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 10px;
+    height: 20vh;
+    padding: 25px;
+}
+
+.explicacion__titulo {
+    grid-area: titulo;
+}
+
+.explicacion__analizador_lexico {
     grid-area: fase1;
+    padding: 20px;
+    background-color: antiquewhite;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.analizador_sintactico{
+.explicacion__analizador_sintactico {
     grid-area: fase2;
+    padding: 20px;
+    background-color: antiquewhite;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.analizador_semantico{
+.explicacion__analizador_semantico {
     grid-area: fase3;
+    background-color: antiquewhite;
+    padding: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+
+.explicacion__container {
+    display: grid;
+    grid-template-areas:
+        "numero"
+        "titulo"
+        "texto" ;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.3fr 1fr;
+    justify-items: center
+}
+
+.explicacion_numero {
+    grid-area: numero;
+}
+
+.explicacion__analizador_titulo {
+    font-size: 3.5vh;
+    grid-area: titulo;
+}
+
+.explicacion__analizador_descripcion {
+    font-size: 2.5vh;
+    grid-area: texto;
+}
+
+.explicacion__titulo-h1 {
+    font-size: 6vh;
+    text-align: center;
+}
+
+/* Página del analizador*/
 
 .analizador__contenido {
     display: grid;
     grid-template-areas:
-    "titulo_analizador titulo_analizador_lexico titulo_analizador_sintactico"
-    "entrada_texto resultado_lexico resultado_sintactico";
+        "titulo_analizador titulo_analizador_lexico titulo_analizador_sintactico"
+        "entrada_texto resultado_lexico resultado_sintactico";
     grid-template-columns: 1.5fr 1fr 1fr;
     grid-template-rows: auto 1fr;
     column-gap: 20px;
 }
 
-.analizador__contenido_analizador_titulo{
-    display: grid;
+
+.analizador__contenido_analizador_titulo {
     grid-area: titulo_analizador;
 }
 
-.analizador__contenido_analizador_lexico_titulo{
-    display: grid;
+.analizador__contenido_analizador_lexico_titulo {
     grid-area: titulo_analizador_lexico;
 }
 
-.analizador__contenido_analizador_sintactico_titulo{
-    display: grid;
+.analizador__contenido_analizador_sintactico_titulo {
     grid-area: titulo_analizador_sintactico;
 }
 
-.analizador__contenido_analizador_entrada{
-    display: grid;
+.analizador__contenido_analizador_entrada {
     grid-area: entrada_texto;
 }
 
-.analizador__contenido-resultado_analizador_Lexico{
-    display: grid;
+.analizador__contenido-resultado_analizador_Lexico {
     grid-area: resultado_lexico;
-    border: 2px solid black;
+    background-color: #ffffff;
+    color: #252830;
 }
 
-.analizador__contenido-resultado_analizador_sintactico{
-    display: grid;
+.analizador__contenido-resultado_analizador_sintactico {
     grid-area: resultado_sintactico;
-    border: 2px solid black;
+    background-color: #ffffff;
+    color: #252830;
 }
 
-textarea{
+.analizador-titulo{
+    color: white;
+}
+
+
+
+.boton_compilador {
+    background-color: #44c767;
+    border-radius: 3px;
+    border: 1px solid #18ab29;
+    display: inline-block;
+    cursor: pointer;
+    color: #252830;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 9px 31px;
+    text-decoration: none;
+}
+
+textarea {
     height: 40vh;
     border: none;
     cursor: default;
@@ -173,60 +247,20 @@ textarea{
     resize: none;
 }
 
-textarea:focus{
+textarea:focus {
     outline: none;
 }
 
-.datos_info{
+.datos_info {
     height: 20px;
 }
 
-.text-body-1{
-    font-size: 20px;
+.text-body-1 {
+    font-size: 2.8vh;
+
 }
-.linea{
+
+.linea {
     font-weight: bold;
     text-align: center;
 }
-/*
-.analizador__contenido-titulo_analizador{
-    grid-area: titulo_analizador;
-    padding: 0;
-}
-
-.analizador__contenido-titulo_token{
-    display: grid;
-    grid-area: titulo_token;
-}
-
-.analizador__contenido-entrada_texto{
-    display: grid;
-    grid-area: entrada_texto;
-}
-
-.analizador__contenido-resultado_token{
-    display: grid;
-    grid-area: resultado_token;
-    background-color: aquamarine;
-}
-
-.analizador__contenido-tabla_resultados{
-    display: grid;
-    grid-area: tabla_resultados;
-}
-
-.resultado_token{
-    border-width: 1px;
-    border-color: #252830;
-}
-
-.contenedor_denose{
-    padding-left: 50px;
-    text-align: start;
-}
-
-.tabla_resultados{
-    font-size: 25px;
-}
-
-*/
