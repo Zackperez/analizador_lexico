@@ -106,10 +106,10 @@ function comprobarCaso(bloques) {
     if (item.match(/^[a-zA-Z_]+([0-9]+)?\s(Texto|Entero|Real)[;]$/)) {
       respuesta = [i + 1, 'Inicialización de variable'];
 
-    } else if (item.match(/^[a-zA-Z_]+([0-9]+)?\s[=]\s((["][a-zA-Z0-9\s,.-/]+["])?|[a-zA-Z0-9/])[;]$/)) {
+    } else if (item.match(/^[a-zA-Z]+([0-9]+)?\s[=]\s((["][a-zA-Z0-9_\s,.-/]+["])?|([0-9/]+))[;]$/)) {
       respuesta = [i + 1, 'Asignación de variable'];
 
-    } else if (item.match(/^[a-zA-Z_]+([0-9]+)?\s[=]\sCaptura[.](Texto|Entero|Real)[(][)][;]$/)) {
+    } else if (item.match(/^[a-zA-Z]+([0-9]+)?\s[=]\sCaptura[.](Texto|Entero|Real)[(][)][;]$/)) {
       respuesta = [i + 1, 'Lectura de datos'];
 
     } else if (item.match(/^Mensaje[.]Texto[(]["][a-zA-Z0-9\s]+["][)][;]$/)) {
@@ -121,6 +121,7 @@ function comprobarCaso(bloques) {
     respuestas.push(respuesta);
     console.log(respuestas);
     i++;
+    
   })
   sintac.innerHTML = ``;
   respuestas.forEach(item => {
